@@ -1,0 +1,1 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Roboto,serif}:root{--red: #e52e4d;--green: #2EB086;--text-title: #edeaf0;--text-body: #afabb6;--border: #252529;--shape: #17171a;--background: #0c0c0d}body{background:var(--background);color:var(--text-title);-webkit-font-smoothing:antialiased}
