@@ -1,3 +1,7 @@
 <div class="container">
-  <p>character-listing works!</p>
+  <div class="wrapper-cards">
+    @for (character of characters; track character.id) {
+    <app-cards [character]="character"></app-cards>
+    }
+  </div>
 </div>

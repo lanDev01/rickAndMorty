@@ -1,0 +1,21 @@
+<div class="card">
+  <img src="{{ character().image }}" alt="{{ character().name }}">
+  <div class="content">
+    <h3>{{ character().name }}</h3>
+
+    <div class="wrapper-status">
+      <span [ngClass]="getColorStatus(character().status)" [attr.aria-label]="character().status"></span>
+      <p>{{ character().status }} - {{ character().species }}</p>
+    </div>
+
+    <div class="wrapper-location">
+      <p class="description">Last known location:</p>
+      <p>{{ character().origin.name }}</p>
+    </div>
+
+    <div class="wrapper-location">
+      <p class="description">First seen in:</p>
+      <p>{{ character().location.name }}</p>
+    </div>
+  </div>
+</div>
