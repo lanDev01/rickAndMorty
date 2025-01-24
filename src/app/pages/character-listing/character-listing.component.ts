@@ -1,4 +1,8 @@
 import { CharactersService } from "@/core/services/characters/characters.service";
+import type {
+  Character,
+  CharacterApiResponse,
+} from "@/shared/models/character.model";
 import { Component, inject } from "@angular/core";
 
 @Component({
@@ -10,14 +14,14 @@ import { Component, inject } from "@angular/core";
 export class CharacterListingComponent {
   service = inject(CharactersService);
 
-  characters: any[] = [];
+  characters: Character[] = [];
 
   ngOnInit(): void {
     this.getAllCharacters();
   }
 
   getAllCharacters() {
-    this.service.GetAllCharacters().subscribe((data: any) => {
+    this.service.GetAllCharacters().subscribe((data: CharacterApiResponse) => {
       this.characters = data.results;
       console.log(this.characters);
     });
