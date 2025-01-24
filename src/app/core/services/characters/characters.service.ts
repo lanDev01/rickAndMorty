@@ -10,7 +10,9 @@ import type { CharacterApiResponse } from "@/shared/models/character.model";
 export class CharactersService {
   http = inject(HttpClient);
 
-  GetAllCharacters(): Observable<CharacterApiResponse> {
-    return this.http.get<CharacterApiResponse>(`${baseUrl}character`);
+  GetAllCharacters(page?: string): Observable<CharacterApiResponse> {
+    return this.http.get<CharacterApiResponse>(
+      `${baseUrl}/character/?page=${page}`
+    );
   }
 }

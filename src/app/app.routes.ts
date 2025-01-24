@@ -7,7 +7,16 @@ export const routes: Routes = [
     component: CharacterListingComponent,
   },
   {
-    path: "Home",
+    path: "characters/:page",
     component: CharacterListingComponent,
+  },
+  {
+    path: "characters",
+    redirectTo: "characters/1",
+    pathMatch: "full",
+  },
+  {
+    path: "**",
+    redirectTo: "characters/1",
   },
 ];
