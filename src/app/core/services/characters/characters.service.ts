@@ -10,9 +10,16 @@ import type { CharacterApiResponse } from "@/shared/models/character.model";
 export class CharactersService {
   http = inject(HttpClient);
 
-  GetAllCharacters(page?: string): Observable<CharacterApiResponse> {
-    return this.http.get<CharacterApiResponse>(
-      `${baseUrl}/character/?page=${page}`
-    );
+  GetAllCharacters(
+    page: string,
+    search: string
+  ): Observable<CharacterApiResponse> {
+    let url = `${baseUrl}/character/?page=${page}`;
+
+    if (search) {
+      url += `&name=${search}`;
+    }
+
+    return this.http.get<CharacterApiResponse>(url);
   }
 }

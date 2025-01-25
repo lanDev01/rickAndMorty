@@ -1,4 +1,13 @@
 <div class="container">
+
+  <form>
+    <input type="text" placeholder="Search" [(ngModel)]="search" (ngModelChange)="searchCharacter()"
+      class="search-input" name="search-character" />
+    <input type="text" placeholder="Search" (ngModelChange)="searchCharacter()" class="search-input" />
+    <input type="text" placeholder="Search" (ngModelChange)="searchCharacter()" class="search-input" />
+    <input type="text" placeholder="Search" (ngModelChange)="searchCharacter()" class="search-input" />
+  </form>
+
   <div class="wrapper-cards">
     @for (character of characters; track character.id) {
     <app-cards [character]="character"></app-cards>
@@ -6,6 +15,5 @@
   </div>
 
   <app-pagination [totalPages]="totalPages"></app-pagination>
-
   <app-footer></app-footer>
 </div>

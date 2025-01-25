@@ -23,21 +23,23 @@ export class PaginationComponent {
 
   totalPages = input.required<number>();
   page = 1;
+  search = "";
 
   route = inject(ActivatedRoute);
   router = inject(Router);
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.queryParamMap.subscribe(params => {
       this.page = Number(params.get("page") ?? "1");
+      this.search = params.get("search") ?? "";
     });
   }
 
   goToPage(newPage: number): void {
     if (newPage >= 1 && newPage <= this.totalPages()) {
       this.page = newPage;
-      this.router.navigate(["../", this.page], {
-        relativeTo: this.route,
+      this.router.navigate(["/characters"], {
+        queryParams: { search: this.search, page: this.page },
       });
     }
   }
