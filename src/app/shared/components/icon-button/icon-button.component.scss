@@ -1,0 +1,26 @@
+button {
+  width: 38px;
+  height: 38px;
+  outline: nones;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-title);
+  background-color: var(--shape);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  transition: all .7s;
+}
+
+button:hover {
+  filter: brightness(.7);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  filter: brightness(.6);
+}

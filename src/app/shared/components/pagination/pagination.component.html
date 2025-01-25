@@ -1,0 +1,17 @@
+<div class="container">
+  <app-icon-button [disabled]="page === 1" (click)="goToFirstPage()">
+    <lucide-icon [name]="chevronsLeft"></lucide-icon>
+  </app-icon-button>
+
+  <app-icon-button [disabled]="page === 1" (click)="goToPreviousPage()">
+    <lucide-icon [name]="chevronLeft"></lucide-icon>
+  </app-icon-button>
+
+  <app-icon-button [disabled]="page === totalPages()" (click)="goToNextPage()">
+    <lucide-icon [name]="chevronRight"></lucide-icon>
+  </app-icon-button>
+
+  <app-icon-button [disabled]="page === totalPages()" (click)="goToLastPage()">
+    <lucide-icon [name]="chevronsRight"></lucide-icon>
+  </app-icon-button>
+</div>

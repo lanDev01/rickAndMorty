@@ -7,10 +7,11 @@ import type {
 
 import { CharactersService } from "@/core/services/characters/characters.service";
 import { CardsComponent } from "@/shared/components/cards/cards.component";
+import { PaginationComponent } from "@/shared/components/pagination/pagination.component";
 
 @Component({
   selector: "app-character-listing",
-  imports: [CardsComponent],
+  imports: [CardsComponent, PaginationComponent],
   templateUrl: "./character-listing.component.html",
   styleUrl: "./character-listing.component.scss",
 })
@@ -21,11 +22,11 @@ export class CharacterListingComponent {
 
   characters: Character[] = [];
   page = "1";
+  totalPages = 0;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.page = params.get("page") ?? "1";
-      console.log(this.page);
 
       this.getAllCharacters(this.page);
     });
@@ -36,6 +37,7 @@ export class CharacterListingComponent {
       .GetAllCharacters(page)
       .subscribe((data: CharacterApiResponse) => {
         this.characters = data.results;
+        this.totalPages = data.info.pages;
       });
   }
 }
