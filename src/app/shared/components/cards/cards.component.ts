@@ -11,10 +11,6 @@ import { Component, input } from "@angular/core";
 export class CardsComponent {
   character = input.required<Character>();
 
-  ngOnInit(): void {
-    console.log(this.character());
-  }
-
   getColorStatus(status: string) {
     switch (status) {
       case "Alive":
