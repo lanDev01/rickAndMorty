@@ -2,7 +2,12 @@
   background: var(--shape);
   width: 100%;
   height: auto;
+
   border-radius: 8px;
+  border: 1px solid var(--border);
+  -webkit-box-shadow: 0px 6px 30px 0px rgba(37,37,41,0.8);
+  -moz-box-shadow: 0px 6px 30px 0px rgba(37,37,41,0.8);
+  box-shadow: 0px 6px 30px 0px rgba(37,37,41,0.8);
 
   display: flex;
   flex-direction: row;
