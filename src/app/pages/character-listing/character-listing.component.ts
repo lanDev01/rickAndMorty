@@ -8,10 +8,11 @@ import type {
 import { CharactersService } from "@/core/services/characters/characters.service";
 import { CardsComponent } from "@/shared/components/cards/cards.component";
 import { PaginationComponent } from "@/shared/components/pagination/pagination.component";
+import { FooterComponent } from "@/shared/components/footer/footer.component";
 
 @Component({
   selector: "app-character-listing",
-  imports: [CardsComponent, PaginationComponent],
+  imports: [CardsComponent, PaginationComponent, FooterComponent],
   templateUrl: "./character-listing.component.html",
   styleUrl: "./character-listing.component.scss",
 })
