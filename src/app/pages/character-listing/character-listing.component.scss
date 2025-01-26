@@ -1,5 +1,6 @@
 .container {
-  height: 100dvh;
+  height: auto;
+  min-height: calc(100dvh - 88px);
   padding-top: 72px;
   background: var(--background);
   color: var(--text-title);
