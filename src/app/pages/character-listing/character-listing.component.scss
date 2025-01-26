@@ -35,6 +35,27 @@ form {
   }
 }
 
+select {
+  width: 100%;
+  padding: 16px;
+  max-width: 435px;
+
+  color: var(--text-body);
+  font-size: 1.125rem;
+
+  border-radius: 6px;
+  background: var(--shape);
+  border: 1px solid var(--border);
+
+  -webkit-box-shadow: 0px 6px 30px 0px rgba(37,37,41,0.6);
+  -moz-box-shadow: 0px 6px 30px 0px rgba(37,37,41,0.6);
+  box-shadow: 0px 6px 30px 0px rgba(37,37,41,0.6);
+
+  &:focus {
+    outline: 1px solid var(--red);
+  }
+}
+
 .wrapper-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));

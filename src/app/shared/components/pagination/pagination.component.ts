@@ -24,6 +24,9 @@ export class PaginationComponent {
   totalPages = input.required<number>();
   page = 1;
   search = "";
+  status = "";
+  gender = "";
+  selectedSpecies = "";
 
   route = inject(ActivatedRoute);
   router = inject(Router);
@@ -32,14 +35,24 @@ export class PaginationComponent {
     this.route.queryParamMap.subscribe(params => {
       this.page = Number(params.get("page") ?? "1");
       this.search = params.get("search") ?? "";
+      this.status = params.get("status") ?? "";
+      this.gender = params.get("gender") ?? "";
+      this.selectedSpecies = params.get("species") ?? "";
     });
   }
 
   goToPage(newPage: number): void {
     if (newPage >= 1 && newPage <= this.totalPages()) {
       this.page = newPage;
+
       this.router.navigate(["/characters"], {
-        queryParams: { search: this.search, page: this.page },
+        queryParams: {
+          search: this.search,
+          page: this.page,
+          status: this.status,
+          gender: this.gender,
+          species: this.selectedSpecies,
+        },
       });
     }
   }

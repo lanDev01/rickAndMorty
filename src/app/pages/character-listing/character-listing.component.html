@@ -1,11 +1,29 @@
 <div class="container">
 
   <form>
-    <input type="text" placeholder="Search" [(ngModel)]="search" (ngModelChange)="searchCharacter()"
-      class="search-input" name="search-character" />
-    <input type="text" placeholder="Search" (ngModelChange)="searchCharacter()" class="search-input" />
-    <input type="text" placeholder="Search" (ngModelChange)="searchCharacter()" class="search-input" />
-    <input type="text" placeholder="Search" (ngModelChange)="searchCharacter()" class="search-input" />
+    <input type="text" class="search-input" placeholder="Search" [(ngModel)]="search" (ngModelChange)="applyFilters()"
+      name="search-character" />
+
+    <select name="status" [(ngModel)]="status" id="status" (ngModelChange)="applyFilters()">
+      <option value="" selected>Status</option>
+      <option value="alive">Alive</option>
+      <option value="dead">Dead</option>
+      <option value="unknown">Unknown</option>
+    </select>
+
+    <select name="gender" id="gender" [(ngModel)]="gender" (ngModelChange)="applyFilters()">
+      <option value="" selected>Status</option>
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+      <option value="unknown">Unknown</option>
+    </select>
+
+    <select name="species" [(ngModel)]="selectedSpecies" id="species" (change)="applyFilters()">
+      <option value="" selected>Species</option>
+      @for (specie of species; track $index) {
+      <option [value]="specie">{{ specie }}</option>
+      }
+    </select>
   </form>
 
   <div class="wrapper-cards">

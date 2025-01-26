@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, type ParamMap, Router } from "@angular/router";
 import type {
   Character,
   CharacterApiResponse,
@@ -10,6 +10,7 @@ import { CardsComponent } from "@/shared/components/cards/cards.component";
 import { PaginationComponent } from "@/shared/components/pagination/pagination.component";
 import { FooterComponent } from "@/shared/components/footer/footer.component";
 import { FormsModule } from "@angular/forms";
+import type { CharacterFilters } from "@/shared/models/character-filters.model";
 
 @Component({
   selector: "app-character-listing",
@@ -24,30 +25,77 @@ export class CharacterListingComponent {
 
   characters: Character[] = [];
   search = "";
+  status: CharacterFilters["status"] = "";
+  gender: CharacterFilters["gender"] = "";
+  selectedSpecies = "";
+
+  species = [
+    "Human",
+    "Alien",
+    "Humanoid",
+    "unknown",
+    "Poopybutthole",
+    "Mythological Creature",
+    "Animal",
+    "Robot",
+    "Cronenberg",
+    "Disease",
+  ];
 
   page = "1";
   totalPages = 0;
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
-      this.search = params.get("search") ?? "";
-      this.page = params.get("page") ?? "1";
-      this.getAllCharacters(this.page, this.search);
+      const { search, status, gender, species, page } =
+        this.extractQueryParams(params);
+
+      this.search = search;
+      this.status = status;
+      this.gender = gender;
+      this.selectedSpecies = species;
+      this.page = page;
+
+      console.log(this.gender, this.selectedSpecies, this.status);
+      this.getAllCharacters(this.page);
     });
   }
 
-  getAllCharacters(page: string, search: string) {
+  getAllCharacters(page: string) {
     this.service
-      .GetAllCharacters(page, search)
+      .GetAllCharacters(page, {
+        search: this.search,
+        status: this.status,
+        gender: this.gender,
+        species: this.selectedSpecies,
+      })
       .subscribe((data: CharacterApiResponse) => {
         this.characters = data.results;
         this.totalPages = data.info.pages;
       });
   }
 
-  searchCharacter() {
+  applyFilters() {
     this.router.navigate(["/characters"], {
-      queryParams: { search: this.search, page: this.page },
+      queryParams: {
+        search: this.search,
+        status: this.status,
+        gender: this.gender,
+        species: this.selectedSpecies,
+        page: this.page,
+      },
     });
+  }
+
+  private extractQueryParams(
+    params: ParamMap
+  ): CharacterFilters & { page: string } {
+    return {
+      search: params.get("search") ?? "",
+      status: (params.get("status") as CharacterFilters["status"]) ?? "",
+      gender: (params.get("gender") as CharacterFilters["gender"]) ?? "",
+      species: params.get("species") ?? "",
+      page: params.get("page") ?? "1",
+    };
   }
 }
