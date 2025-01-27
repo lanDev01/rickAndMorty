@@ -56,7 +56,6 @@ export class CharacterListingComponent {
       this.selectedSpecies = species;
       this.page = Number(page);
 
-      console.log(this.gender, this.selectedSpecies, this.status);
       this.getAllCharacters(this.page);
     });
   }
