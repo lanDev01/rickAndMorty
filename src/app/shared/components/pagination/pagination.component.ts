@@ -21,6 +21,7 @@ export class PaginationComponent {
   readonly chevronLeft = ChevronLeft;
   readonly chevronsLeft = ChevronsLeft;
 
+  navigateTo = input.required<string>();
   totalPages = input.required<number>();
   page = 1;
   search = "";
@@ -47,7 +48,7 @@ export class PaginationComponent {
     if (newPage >= 1 && newPage <= this.totalPages()) {
       this.page = newPage;
 
-      this.router.navigate(["/characters"], {
+      this.router.navigate([this.navigateTo()], {
         queryParams: {
           search: this.search,
           page: this.page,

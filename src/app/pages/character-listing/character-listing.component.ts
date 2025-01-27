@@ -68,9 +68,9 @@ export class CharacterListingComponent {
         gender: this.gender,
         species: this.selectedSpecies,
       })
-      .subscribe((data: CharacterApiResponse) => {
-        this.characters = data.results;
-        this.totalPages = data.info.pages;
+      .subscribe((response: CharacterApiResponse) => {
+        this.characters = response.results;
+        this.totalPages = response.info.pages;
       });
   }
 
