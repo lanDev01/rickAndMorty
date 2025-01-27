@@ -16,6 +16,22 @@
   --border: #252529;
   --shape: #17171a;
   --background: #0c0c0d;
+  --scrollbar-thumb: #262724;
+  --scrollbar-border: var(--background);
+}
+
+:root.light-theme {
+  --red: #e52e4d;
+  --green: #2EB086;
+
+  --text-title: #2d3436;
+  --text-body: #636e72;
+
+  --border: #dfe6e9;
+  --shape: #ffffff;
+  --background: #f5f6fa;
+  --scrollbar-thumb: #dcdde1;
+  --scrollbar-border: var(--background);
 }
 
 body {

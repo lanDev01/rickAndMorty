@@ -1,0 +1,14 @@
+button {
+  padding: 6px 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--text-title);
+  font-family: inherit;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background: var(--red);
+}
