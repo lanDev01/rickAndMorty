@@ -7,6 +7,27 @@
     <lucide-icon [name]="chevronLeft"></lucide-icon>
   </app-icon-button>
 
+  <!-- Ellipsis to the left -->
+  @if (showLeftEllipsis()) {
+  <app-icon-button class="ellipsis" (click)="goToPreviousRange()">
+    ...
+  </app-icon-button>
+  }
+
+  <!-- Page numbers -->
+  @for (p of getDisplayedPages(); track $index) {
+  <app-icon-button (click)="goToPreviousPage()" [isActive]="p === page" (click)="goToPage(p)">
+    {{ p }}
+  </app-icon-button>
+  }
+
+  <!-- Ellipsis to the right -->
+  @if (showRightEllipsis()) {
+  <app-icon-button class="ellipsis" (click)="goToNextRange()">
+    ...
+  </app-icon-button>
+  }
+
   <app-icon-button [disabled]="page === totalPages()" (click)="goToNextPage()">
     <lucide-icon [name]="chevronRight"></lucide-icon>
   </app-icon-button>

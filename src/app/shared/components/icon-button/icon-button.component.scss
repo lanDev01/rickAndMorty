@@ -32,3 +32,10 @@ button {
     filter: brightness(.6);
   }
 }
+
+button.active {
+  background-color: var(--background);
+  color: var(--text-title);
+  filter: brightness(.7);
+  cursor: auto;
+}
