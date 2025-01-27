@@ -1,14 +1,19 @@
 import type { Routes } from "@angular/router";
-import { CharacterListingComponent } from "./pages/character-listing/character-listing.component";
 
 export const routes: Routes = [
   {
-    path: "",
-    component: CharacterListingComponent,
+    path: "characters",
+    loadComponent: () =>
+      import("./pages/character-listing/character-listing.component").then(
+        c => c.CharacterListingComponent
+      ),
   },
   {
-    path: "characters",
-    component: CharacterListingComponent,
+    path: "episodes",
+    loadComponent: () =>
+      import("./pages/episode-listing/episode-listing.component").then(
+        c => c.EpisodeListingComponent
+      ),
   },
   {
     path: "**",
