@@ -19,6 +19,18 @@ form {
   }
 }
 
+.wrapper-searchs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-body);
+  }
+}
+
 .search-input {
   width: 100%;
   padding: 16px;

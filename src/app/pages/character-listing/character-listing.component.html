@@ -1,29 +1,45 @@
 <div class="container">
 
   <form>
-    <input type="text" class="search-input" placeholder="Search" [(ngModel)]="search" (ngModelChange)="applyFilters()"
-      name="search-character" />
+    <div class="wrapper-searchs">
+      <input type="text" class="search-input" name="search-character" id="search" placeholder="Search"
+        [(ngModel)]="search" (ngModelChange)="applyFilters()" />
 
-    <select name="status" [(ngModel)]="status" id="status" (ngModelChange)="applyFilters()">
-      <option value="" selected>Status</option>
-      <option value="alive">Alive</option>
-      <option value="dead">Dead</option>
-      <option value="unknown">Unknown</option>
-    </select>
+      <label for="search">Search by name</label>
+    </div>
 
-    <select name="gender" id="gender" [(ngModel)]="gender" (ngModelChange)="applyFilters()">
-      <option value="" selected>Status</option>
-      <option value="female">Female</option>
-      <option value="male">Male</option>
-      <option value="unknown">Unknown</option>
-    </select>
+    <div class="wrapper-searchs">
+      <select name="status" [(ngModel)]="status" id="status" (ngModelChange)="applyFilters()">
+        <option value="" selected>Status</option>
+        <option value="alive">Alive</option>
+        <option value="dead">Dead</option>
+        <option value="unknown">Unknown</option>
+      </select>
 
-    <select name="species" [(ngModel)]="selectedSpecies" id="species" (change)="applyFilters()">
-      <option value="" selected>Species</option>
-      @for (specie of species; track $index) {
-      <option [value]="specie">{{ specie }}</option>
-      }
-    </select>
+      <label for="status">Search by status</label>
+    </div>
+
+    <div class="wrapper-searchs">
+      <select name="gender" id="gender" [(ngModel)]="gender" (ngModelChange)="applyFilters()">
+        <option value="" selected>Gender</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="unknown">Unknown</option>
+      </select>
+
+      <label for="gender">Search by gender</label>
+    </div>
+
+    <div class="wrapper-searchs">
+      <select name="species" [(ngModel)]="selectedSpecies" id="species" (change)="applyFilters()">
+        <option value="" selected>Species</option>
+        @for (specie of species; track $index) {
+        <option [value]="specie">{{ specie }}</option>
+        }
+      </select>
+
+      <label for="species">Search by species</label>
+    </div>
   </form>
 
   <div class="wrapper-cards">
