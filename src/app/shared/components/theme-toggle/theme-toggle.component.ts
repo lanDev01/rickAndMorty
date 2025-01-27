@@ -16,6 +16,10 @@ export class ThemeToggleComponent {
   isLightMode = false;
   themeService = inject(ThemeService);
 
+  ngOnInit(): void {
+    this.isLightMode = this.themeService.loadTheme();
+  }
+
   toggleTheme(): void {
     this.isLightMode = !this.isLightMode;
     this.themeService.toggleTheme(this.isLightMode);
