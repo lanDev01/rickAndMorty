@@ -9,7 +9,9 @@
       <select name="episode-number" id="episode-number" (change)="onEpisodeSelect($event)"
         [(ngModel)]="selectedEpisodeId">
         @for (count of countEpisode; track $index) {
+        @defer (on immediate) {
         <option [value]="count">Episode - {{ count }}</option>
+        }
         }
       </select>
 
@@ -19,7 +21,15 @@
 
   <div class="wrapper-cards">
     @for (character of characters; track $index) {
+    @defer (on immediate) {
     <app-cards [character]="character"></app-cards>
+    }
+    }
+
+    @empty {
+    @defer (on immediate) {
+    <app-no-items></app-no-items>
+    }
     }
   </div>
 </div>

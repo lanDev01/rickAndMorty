@@ -5,16 +5,25 @@ import type {
   CharacterApiResponse,
 } from "@/shared/models/character.model";
 
-import { CharactersService } from "@/core/services/characters/characters.service";
-import { CardsComponent } from "@/shared/components/cards/cards.component";
-import { PaginationComponent } from "@/shared/components/pagination/pagination.component";
-import { FooterComponent } from "@/shared/components/footer/footer.component";
 import { FormsModule } from "@angular/forms";
+
 import type { CharacterFilters } from "@/shared/models/character-filters.model";
+import { CharactersService } from "@/core/services/characters/characters.service";
+
+import { CardsComponent } from "@/shared/components/cards/cards.component";
+import { FooterComponent } from "@/shared/components/footer/footer.component";
+import { NoItemsComponent } from "@/shared/components/no-items/no-items.component";
+import { PaginationComponent } from "@/shared/components/pagination/pagination.component";
 
 @Component({
   selector: "app-character-listing",
-  imports: [CardsComponent, PaginationComponent, FooterComponent, FormsModule],
+  imports: [
+    CardsComponent,
+    PaginationComponent,
+    FooterComponent,
+    NoItemsComponent,
+    FormsModule,
+  ],
   templateUrl: "./character-listing.component.html",
   styleUrl: "./character-listing.component.scss",
 })

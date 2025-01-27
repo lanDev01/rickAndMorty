@@ -9,7 +9,9 @@
       <select name="location-number" id="location-number" (change)="onLocationSelect($event)"
         [(ngModel)]="selectedLocationId">
         @for (count of countLocation; track $index) {
+        @defer (on immediate) {
         <option [value]="count">Location - {{ count }}</option>
+        }
         }
       </select>
 
@@ -20,6 +22,12 @@
   <div class="wrapper-cards">
     @for (character of characters; track $index) {
     <app-cards [character]="character"></app-cards>
+    }
+
+    @empty {
+    @defer (on immediate) {
+    <app-no-items></app-no-items>
+    }
     }
   </div>
 </div>

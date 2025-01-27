@@ -9,12 +9,13 @@ import { CharactersService } from "@/core/services/characters/characters.service
 import type { LocationApi } from "@/shared/models/location.model";
 import type { Character } from "@/shared/models/character.model";
 
-import { FooterComponent } from "@/shared/components/footer/footer.component";
 import { CardsComponent } from "@/shared/components/cards/cards.component";
+import { FooterComponent } from "@/shared/components/footer/footer.component";
+import { NoItemsComponent } from "@/shared/components/no-items/no-items.component";
 
 @Component({
   selector: "app-location-listing",
-  imports: [FooterComponent, FormsModule, CardsComponent],
+  imports: [FooterComponent, FormsModule, CardsComponent, NoItemsComponent],
   templateUrl: "./location-listing.component.html",
   styleUrl: "./location-listing.component.scss",
 })

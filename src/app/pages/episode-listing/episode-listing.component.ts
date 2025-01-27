@@ -10,10 +10,11 @@ import { CardsComponent } from "@/shared/components/cards/cards.component";
 import { EpisodesService } from "@/core/services/episodes/episodes.service";
 import { FooterComponent } from "@/shared/components/footer/footer.component";
 import { CharactersService } from "@/core/services/characters/characters.service";
+import { NoItemsComponent } from "@/shared/components/no-items/no-items.component";
 
 @Component({
   selector: "app-episode-listing",
-  imports: [FooterComponent, CardsComponent, FormsModule],
+  imports: [FooterComponent, CardsComponent, NoItemsComponent, FormsModule],
   templateUrl: "./episode-listing.component.html",
   styleUrl: "./episode-listing.component.scss",
 })

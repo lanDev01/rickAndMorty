@@ -19,6 +19,10 @@
     @media screen and (max-width: 600px) {
       font-size: 1.5rem;
     }
+
+    @media screen and (max-width: 468px) {
+      font-size: 1.125rem;
+    }
   }
 
   .description {
@@ -56,6 +60,14 @@
       &:focus {
         outline: 1px solid var(--red);
       }
+
+      @media screen and (max-width: 600px) {
+        width: 120px;
+      }
+
+      @media screen and (max-width: 468px) {
+        font-size: 0.75rem;
+      }
     }
 
     label {
@@ -64,6 +76,10 @@
       font-weight: 400;
       font-size: 0.875rem;
       line-height: calc(1.25 / 0.875);
+
+      @media screen and (max-width: 468px) {
+        font-size: 0.75rem;
+      }
     }
   }
 

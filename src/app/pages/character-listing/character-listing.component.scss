@@ -4,6 +4,11 @@
   padding-top: 72px;
   background: var(--background);
   color: var(--text-title);
+
+  h2 {
+    padding: 32px 32px 0 32px;
+    font-size: 1.875rem;
+  }
 }
 
 form {
