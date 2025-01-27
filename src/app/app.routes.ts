@@ -16,6 +16,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: "locations",
+    loadComponent: () =>
+      import("./pages/location-listing/location-listing.component").then(
+        c => c.LocationListingComponent
+      ),
+  },
+  {
     path: "**",
     redirectTo: "characters",
   },

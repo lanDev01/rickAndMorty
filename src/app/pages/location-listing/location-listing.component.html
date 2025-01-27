@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="header">
+    <div class="content-title">
+      <h3>Location {{ locationName }}</h3>
+      <p class="description">{{ type }} - {{ dimension }} </p>
+    </div>
+
+    <div class="content-search">
+      <select name="location-number" id="location-number" (change)="onLocationSelect($event)"
+        [(ngModel)]="selectedLocationId">
+        @for (count of countLocation; track $index) {
+        <option [value]="count">Location - {{ count }}</option>
+        }
+      </select>
+
+      <label for="location-number">Search by location</label>
+    </div>
+  </div>
+
+  <div class="wrapper-cards">
+    @for (character of characters; track $index) {
+    <app-cards [character]="character"></app-cards>
+    }
+  </div>
+</div>
+
+<app-footer></app-footer>

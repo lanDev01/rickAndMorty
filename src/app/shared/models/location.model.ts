@@ -1,6 +1,6 @@
 import type { Info } from "./info.model";
 
-export interface Location {
+export interface LocationApi {
   id: number;
   name: string;
   type: string;
@@ -12,5 +12,5 @@ export interface Location {
 
 export interface LocationApiResponse {
   info: Info;
-  results: Location[];
+  results: LocationApi[];
 }
