@@ -64,6 +64,14 @@ select {
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   padding: 32px;
   gap: 24px;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  @media screen and (max-width: 386px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 
 app-cards {
