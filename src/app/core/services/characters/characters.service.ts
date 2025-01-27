@@ -2,7 +2,10 @@ import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { baseUrl } from "@/env/env";
 import type { Observable } from "rxjs";
-import type { CharacterApiResponse } from "@/shared/models/character.model";
+import type {
+  Character,
+  CharacterApiResponse,
+} from "@/shared/models/character.model";
 import type { CharacterFilters } from "@/shared/models/character-filters.model";
 
 @Injectable({
@@ -23,5 +26,10 @@ export class CharactersService {
     if (filters.species) url += `&species=${filters.species}`;
 
     return this.http.get<CharacterApiResponse>(url);
+  }
+
+  GetCharacterById(id: number): Observable<Character> {
+    const url = `${baseUrl}/character/${id}`;
+    return this.http.get<Character>(url);
   }
 }

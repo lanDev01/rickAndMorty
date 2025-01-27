@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header">
+    <div class="content-title">
+      <h3>Episode {{ episodeName }}</h3>
+      <p class="description">{{ episodeNumber }} - {{ air_date }}</p>
+    </div>
+
+    <div class="content-search">
+      <select name="episode-number" id="episode-number" (change)="onEpisodeSelect($event)"
+        [(ngModel)]="selectedEpisodeId">
+        @for (count of countEpisode; track $index) {
+        <option [value]="count">Episode - {{ count }}</option>
+        }
+      </select>
+
+      <label for="search">Search by episode</label>
+    </div>
+  </div>
+
+  <div class="wrapper-cards">
+    @for (character of characters; track $index) {
+    <app-cards [character]="character"></app-cards>
+    }
+  </div>
+</div>
+<app-footer></app-footer>
