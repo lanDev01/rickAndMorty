@@ -12,7 +12,7 @@ export class CharactersService {
   http = inject(HttpClient);
 
   GetAllCharacters(
-    page: string,
+    page: number,
     filters: CharacterFilters
   ): Observable<CharacterApiResponse> {
     let url = `${baseUrl}/character/?page=${page}`;

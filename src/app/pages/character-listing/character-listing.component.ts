@@ -42,7 +42,7 @@ export class CharacterListingComponent {
     "Disease",
   ];
 
-  page = "1";
+  page = 1;
   totalPages = 0;
 
   ngOnInit(): void {
@@ -54,14 +54,14 @@ export class CharacterListingComponent {
       this.status = status;
       this.gender = gender;
       this.selectedSpecies = species;
-      this.page = page;
+      this.page = Number(page);
 
       console.log(this.gender, this.selectedSpecies, this.status);
       this.getAllCharacters(this.page);
     });
   }
 
-  getAllCharacters(page: string) {
+  getAllCharacters(page: number) {
     this.service
       .GetAllCharacters(page, {
         search: this.search,
