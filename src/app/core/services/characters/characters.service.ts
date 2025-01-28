@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { baseUrl } from "@/env/env";
-import type { Observable } from "rxjs";
+import { catchError, of, type Observable } from "rxjs";
 import type {
   Character,
   CharacterApiResponse,
@@ -25,7 +25,17 @@ export class CharactersService {
     if (filters.gender) url += `&gender=${filters.gender}`;
     if (filters.species) url += `&species=${filters.species}`;
 
-    return this.http.get<CharacterApiResponse>(url);
+    return this.http.get<CharacterApiResponse>(url).pipe(
+      catchError(error => {
+        if (error.status === 404) {
+          return of({
+            info: { pages: 0, count: 0, next: null, prev: null },
+            results: [],
+          });
+        }
+        throw error;
+      })
+    );
   }
 
   GetCharacterById(id: number): Observable<Character> {
