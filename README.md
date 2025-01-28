@@ -1,59 +1,49 @@
-# RickAndMorty
+# Rick and Morty
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+![App Screenshot](./public/banner.jpg)
 
-## Development server
+## Descrição
 
-To start a local development server, run:
+Este projeto é uma aplicação web desenvolvida para explorar informações sobre os personagens, episódios e locais do universo de Rick and Morty. A aplicação utiliza a [Rick and Morty API](https://rickandmortyapi.com/) para fornecer dados detalhados.
 
-```bash
-ng serve
-```
+## Funcionalidades
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Listagem de personagens, episódios e locais**
+- **Sistema de busca e filtros para encontrar informações específicas.**
+- **URL state para persistência de filtros e parâmetros de navegação.**
+- **Paginação para navegação entre resultados.**
+- **Interface responsiva e design amigável.**
+- **Modo dark e light**
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular 19**
+- **TypeScript**
+- **Sass**
+- **lucide-angular**
 
-```bash
-ng generate component component-name
-```
+## Instalação
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Clone o repositório e instale as dependências usando npm ou yarn.
 
 ```bash
-ng build
+git clone https://github.com/lanDev01/rickAndMorty.git
+cd rickAndMorty
+npm install
+# ou
+yarn install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Contribuindo
 
-## Running unit tests
+Contribuições são sempre bem-vindas!
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+    1. Faça um fork deste repositório.
+    2. Crie uma branch para sua feature ou correção de bug: git checkout -b minha-feature.
+    3. Commit suas alterações: git commit -m 'Minha nova feature'.
+    4. Faça um push para a branch: git push origin minha-feature.
+    5. Abra um Pull Request.
 
-```bash
-ng test
-```
+## Licença
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Esta aplicação cobre todas as seções essenciais, como funcionalidades, instalação, configuração, tecnologias utilizadas, como contribuir e a licença [MIT](https://choosealicense.com/licenses/mit/).
