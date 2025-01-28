@@ -45,7 +45,14 @@
 
   .description {
     color: var(--text-body);
-    margin-bottom: 8px;
+    font-size: 0.875rem;
+    line-height: calc(1.25 / 0.875);
+  }
+
+  .paragraph {
+    color: var(--text-title);
+    font-size: 1.125rem;
+    line-height: calc(1.75 / 1.125);
   }
 }
 
