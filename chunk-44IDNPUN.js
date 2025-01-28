@@ -1,0 +1,1 @@
+import{Ba as o,Ua as n,Va as s,bb as m}from"./chunk-62KPD2B5.js";var a=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-no-items"]],decls:2,vars:0,template:function(e,c){e&1&&(n(0,"h3"),m(1,"No characters found..."),s())},styles:["h3[_ngcontent-%COMP%]{color:var(--text-body)}"]})};export{a as NoItemsComponent};
