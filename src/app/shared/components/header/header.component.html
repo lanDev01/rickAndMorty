@@ -3,7 +3,17 @@
 
   <nav>
     <app-theme-toggle></app-theme-toggle>
-    <ul>
+    <ul class="list-desktop">
+      <li><a routerLink="/characters">Characters</a></li>
+      <li><a routerLink="/episodes">Episodes</a></li>
+      <li><a routerLink="/locations">Locations</a></li>
+    </ul>
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <lucide-angular [name]="isMenuOpen ? x : menu"></lucide-angular>
+    </button>
+
+    <ul class="list-mobile" [class.open]="isMenuOpen">
       <li><a routerLink="/characters">Characters</a></li>
       <li><a routerLink="/episodes">Episodes</a></li>
       <li><a routerLink="/locations">Locations</a></li>
