@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "ng build --base-href /rickAndMorty/",
+    "build": "ng build --base-href rick-and-morty",
+    "build-ghpages": "ng build --base-href /rickAndMorty/",
     "ghpages": "angular-cli-ghpages --dir=dist/rick-and-morty/browser",
-    "deploy": "npm run build && npm run ghpages",
+    "deploy": "npm run build-ghpages && npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
