@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build --base-href /rickAndMorty/",
     "ghpages": "angular-cli-ghpages --dir=dist/rick-and-morty/browser",
     "deploy": "npm run build && npm run ghpages",
