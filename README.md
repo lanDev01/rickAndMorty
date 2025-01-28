@@ -21,8 +21,11 @@ Este projeto é uma aplicação web desenvolvida para explorar informações sob
 - **TypeScript**
 - **Sass**
 - **lucide-angular**
+- **Docker**
 
 ## Instalação
+
+### 1. **Clonando o repositório**
 
 Clone o repositório e instale as dependências usando npm ou yarn.
 
@@ -33,6 +36,41 @@ npm install
 # ou
 yarn install
 ```
+
+### 2. **Construindo e executando com Docker**
+#### 2.1 **Construindo a imagem Docker**
+Para construir a imagem Docker, utilize o seguinte comando:
+
+```bash
+docker build -t app-rick-and-morty .
+```
+
+#### 2.2 **Executando o contêiner Docker**
+Depois de construir a imagem, execute o contêiner usando o comando abaixo:
+
+```bash
+docker run -p 8080:80 --name app-rick-and-morty app-rick-and-morty
+```
+
+#### 2.3 **Acessando a aplicação**
+Após o contêiner estar rodando, você pode acessar a aplicação no navegador em:
+
+```bash
+http://localhost:8080
+```
+
+### 3 **Parando e removendo o contêiner**
+Para parar o contêiner em execução, utilize o seguinte comando:
+
+```bash
+docker stop app-rick-and-morty
+```
+
+Caso queira remover o contêiner, use:
+```bash
+docker rm app-rick-and-morty
+```
+
 
 ## Contribuindo
 
